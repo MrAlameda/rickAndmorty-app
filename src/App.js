@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./index.css"
+
+import CardCharacter from './components/CardCharacter'
+import Input from './components/Input'
+import LocationInfo from './components/LocationInfo'
+import useApiRick from './hooks/useApiRick'
+import {useState} from 'react'
 
 function App() {
+
+  const [searchLocation, setSearchLocation] = useState()
+  const location = useApiRick(searchLocation)
+
+  console.log (searchLocation)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <section className='main'>
+     <Input
+     setSearchLocation={setSearchLocation}
+     />
+      <LocationInfo
+        location={location} 
+        />
+
+      <div className="container_CardCharacter">
+        {location?.residents.map(resident => (
+          <CardCharacter
+            resident={resident}
+            key={resident}
+             />
+        )
+        )}
+      </div>
+    </section>
+  )
 }
 
-export default App;
+export default App
