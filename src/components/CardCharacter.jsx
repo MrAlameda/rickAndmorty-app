@@ -16,4 +16,4 @@ const CardCharacter = ({resident}) => {
   )
 }
 
-export default CardCharacter
+export default  CardCharacter 

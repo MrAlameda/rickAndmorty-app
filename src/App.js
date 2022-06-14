@@ -7,7 +7,7 @@ import LocationInfo from './components/LocationInfo'
 import useApiRick from './hooks/useApiRick'
 import {useState} from 'react'
 
-function App() {
+const  App=()=> {
 
   const [searchLocation, setSearchLocation] = useState()
   const location = useApiRick(searchLocation)
@@ -36,4 +36,4 @@ function App() {
   )
 }
 
-export { App }
+export default App 
