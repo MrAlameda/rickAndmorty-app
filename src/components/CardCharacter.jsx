@@ -1,4 +1,3 @@
-import axios from 'axios'
 import useApiCharacter from '../hooks/useApiCharacter'
 
 const CardCharacter = ({resident}) => {
