@@ -14,8 +14,11 @@ const  App=()=> {
 
   console.log (searchLocation)
 
+  const text=`Hello, try looking for a dimension ;)`
+
   return (
     <section className='main'>
+      <div className="prent">{text}</div>
      <Input
      setSearchLocation={setSearchLocation}
      />
